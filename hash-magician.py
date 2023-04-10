@@ -59,6 +59,9 @@ while True:
             algoritmos_seleccionados.append('sha1')
         if values['-SHA256-']:
             algoritmos_seleccionados.append('sha256')
+        if not algoritmos_seleccionados:
+            sg.popup('No se ha seleccionado ningun algoritmo. Por favor, seleccione una tipo de algoritmo y vuelva a intentarlo.',title="Error")
+            continue
         
         # Configurar los argumentos
         parser = argparse.ArgumentParser(description='Obtener el hash de todos los archivos en una carpeta')
